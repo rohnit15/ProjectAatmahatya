@@ -13,7 +13,8 @@ config_version=5
 config/name="Project Aatmahatya"
 run/main_scene="uid://dji8flfy6fl3p"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/image="uid://chfv0jh5cgwfv"
+config/icon="uid://chfv0jh5cgwfv"
 
 [display]
 
