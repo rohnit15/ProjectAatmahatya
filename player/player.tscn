@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://b07i34amhqjr3"]
+
+[ext_resource type="Script" uid="uid://710jmdvs5ase" path="res://player/scripts/player.gd" id="1_qjkh3"]
+[ext_resource type="Script" uid="uid://cwt48qcahds3k" path="res://player/states/idle.gd" id="1_rkbax"]
+[ext_resource type="Script" uid="uid://6qrvs2bjce3a" path="res://player/states/run.gd" id="2_g1dw6"]
+[ext_resource type="Script" uid="uid://dhdjvnd7w3ixy" path="res://player/states/jump.gd" id="3_g1dw6"]
+[ext_resource type="Script" uid="uid://brogc702lq7hq" path="res://player/states/fall.gd" id="4_yw30f"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ho47u"]
+size = Vector2(18, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_55wiy"]
+size = Vector2(18, 48)
+
+[node name="Player" type="CharacterBody2D" unique_id=731586070]
+script = ExtResource("1_qjkh3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1409299646]
+position = Vector2(0, -24)
+texture = SubResource("PlaceholderTexture2D_ho47u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1597538232]
+position = Vector2(0, -24)
+shape = SubResource("RectangleShape2D_55wiy")
+
+[node name="States" type="Node" parent="." unique_id=239454760]
+
+[node name="Idle" type="Node" parent="States" unique_id=1385881582]
+unique_name_in_owner = true
+script = ExtResource("1_rkbax")
+
+[node name="Run" type="Node" parent="States" unique_id=753152103]
+unique_name_in_owner = true
+script = ExtResource("2_g1dw6")
+
+[node name="Jump" type="Node" parent="States" unique_id=2034803388]
+unique_name_in_owner = true
+script = ExtResource("3_g1dw6")
+
+[node name="Fall" type="Node" parent="States" unique_id=629612754]
+unique_name_in_owner = true
+script = ExtResource("4_yw30f")
+
+[node name="Label" type="Label" parent="." unique_id=538440813]
+offset_left = -24.0
+offset_top = -71.0
+offset_right = 29.0
+offset_bottom = -48.0
+text = "label"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
